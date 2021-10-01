@@ -6,10 +6,10 @@ The following command should be used.
 ```bash
 python license_manager.py -l <path_to_your_license_file> -d <path_to_directory_with_python_files>
 ```
-* <path_to_your_licenses_file> Only the first license will be taken.
+* <path_to_your_licenses_file> List of licenses, the first one will replace the ones that follow (in case present) or simply added at the top.
 * <path_to_directory_with_python_files> List of arguments representing paths to the directories containing python files.
 
-### Example
+### Examples
 Given the following directory hierarchy:
 ```
 license_manager.py
@@ -23,19 +23,20 @@ license_manager.py
     |-test_utils.py
 |-setup.py
 |-my_license.txt
+|-my_newer_license.txt
 ```
 
-The following command:
-
+1. The following command will update the license for src\main.py and src\utils.py:
 ```bash
 python license_manager.py -l my_license.txt -d src
 ```
 
-Will update the license for src\main.py and src\utils.py
-Wheras executing the following command:
-
+2. Whereas executing the following command will result in updating the license header for src\main.py, src\utils.py, test\test_main.py and test\test_utils.py:
 ```bash
 python license_manager.py -l my_license.txt -d src test
 ```
 
-Will result in updating the license header for src\main.py, src\utils.py, test\test_main.py and test\test_utils.py
+3. Last, if we want to replace an existing license header with a new one, we would do the following command:
+```bash
+python license_manager.py -l my_license.txt my_newer_license.txt -d src
+```
