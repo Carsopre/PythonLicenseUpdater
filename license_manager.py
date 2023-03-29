@@ -1,12 +1,9 @@
-'''
-Original Author: Carles S. Soriano Pérez (carles.sorianoperez@deltares.nl).
-Department: Software Product Development.
-Unit: Deltares Software Centre.
-'''
 import argparse
 from typing import List
 from pathlib import Path
 from fnmatch import fnmatch
+
+__version__ = "0.0.1"
 
 # By default we only add the licenses to the /src *.py files.
 __excluded_files = [

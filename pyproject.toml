@@ -54,5 +54,5 @@ tag_format = "v$major.$minor.$patch"
 changelog_file = "changelog.md"
 update_changelog_on_bump = true
 version_files= [
-    "vrtool/__init__.py",
+    "license_manager.py",
     "pyproject.toml:version",]
