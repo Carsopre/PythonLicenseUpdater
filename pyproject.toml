@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pylu"
-version = "0.0.1"
+version = "0.1.0"
 description = "Python License Update (Pylu). Updates all the python headers of your project with the provided license text."
 authors = ["Carles S. Soriano Perez <carles.sorianoperez@deltares.nl>"]
 license = "MIT"
@@ -49,7 +49,7 @@ line_length = 88
 
 [tool.commitizen]
 name = "cz_conventional_commits"
-version = "0.0.1"
+version = "0.1.0"
 tag_format = "v$major.$minor.$patch"
 changelog_file = "changelog.md"
 update_changelog_on_bump = true

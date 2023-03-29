@@ -3,7 +3,7 @@ from typing import List
 from pathlib import Path
 from fnmatch import fnmatch
 
-__version__ = "0.0.1"
+__version__ = "0.1.0"
 
 # By default we only add the licenses to the /src *.py files.
 __excluded_files = [
