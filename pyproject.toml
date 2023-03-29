@@ -1,12 +1,12 @@
 [tool.poetry]
-name = "pylu"
+name = "pylicup"
 version = "0.1.0"
 description = "Python License Update (Pylu). Updates all the python headers of your project with the provided license text."
 authors = ["Carles S. Soriano Perez <carles.sorianoperez@deltares.nl>"]
 license = "MIT"
 readme = "README.md"
 repository = "https://github.com/Carsopre/PythonLicenseUpdater"
-packages = [{include="pylu"},]
+packages = [{include="pylicup"},]
 
 
 [tool.poetry.dependencies]
@@ -55,5 +55,5 @@ tag_format = "v$major.$minor.$patch"
 changelog_file = "changelog.md"
 update_changelog_on_bump = true
 version_files= [
-    "license_manager.py",
+    "pylicup/license_manager.py",
     "pyproject.toml:version",]
