@@ -1,7 +1,7 @@
 import argparse
 import logging
 
-from pylu.license_manager import license_header_manager
+from pylicup.license_manager import license_header_manager
 
 if __name__ == "__main__":
     """For now we only accept inserting as a direct call from the main"""
