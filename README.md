@@ -1,10 +1,31 @@
+[![Python 3.10](https://img.shields.io/badge/Python-3.10-blue.svg)](https://www.python.org/downloads/release/python-3109/)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+
+
 # PythonLicenseUpdater
 Simple tool that updates your python files license headers for the given directories. By default it will skip __init__.py.
 
 ## How to use it?
+
+### Installation.
+
+1. With pip:
+```bash
+pip install pylicup
+```
+2. With latest version from GitHub:
+```bash
+pip install git+https://github.com/Carsopre/PythonLicenseUpdater.git 
+```
+3. With custom version from GitHub:
+```bash
+pip install git+https://github.com/Deltares/PythonLicenseUpdater.git@v0.0.1
+```
+
+### Usage
 The following command should be used.
 ```bash
-python license_manager.py -l <path_to_your_license_file> -d <path_to_directory_with_python_files>
+python pylicup -l <path_to_your_license_file> -d <path_to_directory_with_python_files>
 ```
 * <path_to_your_licenses_file> List of licenses, the first one will replace the ones that follow (in case present) or simply added at the top.
 * <path_to_directory_with_python_files> List of arguments representing paths to the directories containing python files.
