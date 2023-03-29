@@ -1,3 +1,9 @@
+## v0.1.1 (2023-03-29)
+
+### Fix
+
+- Small fixes on the license manager
+
 ## v0.1.0 (2023-03-29)
 
 ### Feat
