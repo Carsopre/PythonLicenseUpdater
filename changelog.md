@@ -1,3 +1,9 @@
+## v0.1.2 (2023-03-29)
+
+### Fix
+
+- License text gets now between a comment block
+
 ## v0.1.1 (2023-03-29)
 
 ### Fix
