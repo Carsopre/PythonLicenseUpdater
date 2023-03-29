@@ -1,4 +1,6 @@
 import argparse
+import logging
+from pylu.license_manager import license_header_manager
 
 if __name__ == '__main__':
     """For now we only accept inserting as a direct call from the main """
@@ -23,6 +25,6 @@ if __name__ == '__main__':
         help='Directories where to insert / replace licenses.'
     )
     args = parser.parse_args()
-    print("Initializing license manager.")
+    logging.info("Initializing license manager.")
     license_header_manager(args.licenses, args.directories)
-    print("License manager finished.")
+    logging.info("License manager finished.")

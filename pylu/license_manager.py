@@ -1,3 +1,4 @@
+import logging
 from typing import List
 from pathlib import Path
 from fnmatch import fnmatch
@@ -33,7 +34,7 @@ def license_header_manager(header_licenses: List[str], directory_files: List[str
                 file_content.replace(header_to_replace, "")
 
     _files_to_change = get_files_to_change(directory_files)
-    print(f"Found {len(_files_to_change)} files to change.")
+    logging.info(f"Found {len(_files_to_change)} files to change.")
     _licenses_content = get_licenses_content(header_licenses)
 
     files_changed = []
@@ -45,4 +46,4 @@ def license_header_manager(header_licenses: List[str], directory_files: List[str
             file_to_change.write_text(licensed_file_content)
             print(f"Changed license header for: {file_to_change}")
             files_changed.append(file_to_change)
-    print(f"Changed #{len(files_changed)} files.")
+    logging.info(f"Changed #{len(files_changed)} files.")
