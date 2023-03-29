@@ -1,9 +1,6 @@
-import argparse
 from typing import List
 from pathlib import Path
 from fnmatch import fnmatch
-
-__version__ = "0.1.0"
 
 # By default we only add the licenses to the /src *.py files.
 __excluded_files = [
@@ -49,30 +46,3 @@ def license_header_manager(header_licenses: List[str], directory_files: List[str
             print(f"Changed license header for: {file_to_change}")
             files_changed.append(file_to_change)
     print(f"Changed #{len(files_changed)} files.")
-
-if __name__ == '__main__':
-    """For now we only accpet inserting as a direct call from the main """
-    # Define the argparser helper:
-    parser = argparse.ArgumentParser(
-        description='Manages files license header. \n'
-        + 'Sets the last license header given in all files of the file directory.'
-        + 'If multiple license headers are given, the first one will be added to all files and replace the rest provided.'
-        + 'It is possible to include multiple directories where to insert / replace header files.')
-    parser.add_argument(
-        '-l, --licenses',
-        dest='licenses',
-        type=str,
-        nargs='+',
-        required=True,
-        help='License headers file path. The first occurrence is considered as the new one to replace the rest.')
-    parser.add_argument(
-        '-d, --directories',
-        dest='directories',
-        nargs='+',
-        required=True,
-        help='Directories where to insert / replace licenses.'
-    )
-    args = parser.parse_args()
-    print("Initializing license manager.")
-    license_header_manager(args.licenses, args.directories)
-    print("License manager finished.")
