@@ -44,6 +44,7 @@ def license_header_manager(header_licenses: List[str], directory_files: List[str
     _licenses_content = get_licenses_content(header_licenses)
 
     files_changed = []
+    _comment_block = "\"\"\"\n"
     for file_to_change in _files_to_change:
         unlicensed_file_content = get_file_content_without_licenses(
             file_to_change, _licenses_content
@@ -51,7 +52,8 @@ def license_header_manager(header_licenses: List[str], directory_files: List[str
         if not _licenses_content[0] in unlicensed_file_content:
             # Add license if not present.
             licensed_file_content = (
-                _licenses_content[0] + "\n\n" + unlicensed_file_content
+                _comment_block + 
+                _licenses_content[0] + _comment_block + "\n\n" + unlicensed_file_content
             )
             file_to_change.write_text(licensed_file_content)
             logging.info(f"Changed license header for: {file_to_change}")
