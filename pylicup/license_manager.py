@@ -17,12 +17,14 @@ def license_header_manager(header_licenses: List[str], directory_files: List[str
     """
 
     def get_files_to_change(directories_argv: List[str]) -> List[Path]:
+        _files = []
         for directory in directories_argv:
             for found_path in Path(directory).rglob("*"):
                 if found_path.name not in __excluded_files and fnmatch(
                     found_path.name, __pattern
                 ):
-                    yield found_path
+                    _files.append(found_path)
+        return _files
 
     def get_licenses_content(header_licenses_argv: List[str]) -> List[str]:
         return [Path(hl_argv).read_text() for hl_argv in header_licenses_argv]
@@ -35,6 +37,7 @@ def license_header_manager(header_licenses: List[str], directory_files: List[str
             # We need to replace licenses if found.
             for header_to_replace in license_headers[1:]:
                 file_content.replace(header_to_replace, "")
+        return file_content
 
     _files_to_change = get_files_to_change(directory_files)
     logging.info(f"Found {len(_files_to_change)} files to change.")
@@ -51,6 +54,6 @@ def license_header_manager(header_licenses: List[str], directory_files: List[str
                 _licenses_content[0] + "\n\n" + unlicensed_file_content
             )
             file_to_change.write_text(licensed_file_content)
-            print(f"Changed license header for: {file_to_change}")
+            logging.info(f"Changed license header for: {file_to_change}")
             files_changed.append(file_to_change)
     logging.info(f"Changed #{len(files_changed)} files.")
