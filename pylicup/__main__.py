@@ -2,7 +2,7 @@ import argparse
 import logging
 
 from pylicup.license_manager import license_header_manager
-
+from pylicup.pylicup_logger import setup_logger
 if __name__ == "__main__":
     """For now we only accept inserting as a direct call from the main"""
     # Define the argparser helper:
@@ -28,6 +28,7 @@ if __name__ == "__main__":
         help="Directories where to insert / replace licenses.",
     )
     args = parser.parse_args()
+    setup_logger()
     logging.info("Initializing license manager.")
     license_header_manager(args.licenses, args.directories)
     logging.info("License manager finished.")
