@@ -59,5 +59,5 @@ python license_manager.py -l my_license.txt -d src test
 
 3. Last, if we want to replace an existing license header with a new one, we would do the following command:
 ```bash
-python license_manager.py -l my_license.txt my_newer_license.txt -d src
+python license_manager.py -l {NEW_LICENSE} {OLD_LICENSE} -d src
 ```
