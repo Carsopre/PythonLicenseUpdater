@@ -7,7 +7,32 @@ Simple tool that updates your python files license headers for the given directo
 
 ## How to use it?
 
-### Installation.
+### As Docker container
+
+1. Checkout or clone our repository.
+
+
+2. Build the container (with podman or docker):
+```bash
+podman build -t pylicup
+```
+
+3. Run the container mounting the license and the directories to update at the given locations:
+```bash
+podman run -v path/to/your/license/file:/mnt/license -v path/to/your/directory/to/update:/mnt/update pylicup
+```
+
+4. If you want to update multiple directories you can do it as:
+```bash
+podman run -v path/to/your/license/file:/mnt/license -v path/to/your/directory/to/update:/mnt/update/dir_1 -v path/to/your/other/directory/to/update:/mnt/update/dir_2  pylicup
+```
+
+> [!IMPORTANT]
+> Our docker container does not support (yet) replacing of an old license.
+
+### As Python package
+
+#### Installation.
 
 1. With pip:
 ```bash
@@ -22,7 +47,7 @@ pip install git+https://github.com/Carsopre/PythonLicenseUpdater.git
 pip install git+https://github.com/Deltares/PythonLicenseUpdater.git@v0.0.1
 ```
 
-### Usage
+#### Python usage
 The following command should be used.
 ```bash
 python pylicup -l <path_to_your_license_file> -d <path_to_directory_with_python_files>
