@@ -1,29 +1,61 @@
-[tool.poetry]
+[project]
 name = "pylicup"
 version = "0.1.2"
 description = "Python License Update (PyLicUp). Updates all the python headers of your project with the provided license text."
-authors = ["Carles S. Soriano Perez <carles.sorianoperez@deltares.nl>"]
+authors = [{name = "Carles S. Soriano Perez", email="carles.sorianoperez@deltares.nl"}]
 license = "MIT"
 readme = "README.md"
+requires-python = ">=3.11,<3.14"
+
+[project.urls]
+hoempage = "https://github.com/Carsopre/PythonLicenseUpdater"
 repository = "https://github.com/Carsopre/PythonLicenseUpdater"
-packages = [{include="pylicup"},]
-
-
-[tool.poetry.dependencies]
-python = "^3.10"
-
-[tool.poetry.group.dev.dependencies]
-black = "^23.3.0"
-isort = "^5.12.0"
-pytest = "^7.2.2"
 
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+build-backend = "hatchling.build"
+requires = ["hatchling"]
+
+[tool.pixi.workspace]
+channels = ["conda-forge"]
+platforms = ["linux-64", "osx-arm64", "osx-64", "win-64"]
+
+[tool.pixi.pypi-dependencies]
+pylicup = { path = ".", editable = true }
+build = "*"
+
+[tool.pixi.dependencies]
+python = ">=3.11,<3.14"
+
+[tool.pixi.feature.dev.dependencies]
+black = ">=25.1.0, <26"
+isort = ">=5.12.0, <6"
+pytest = ">=7.2.2, <8"
+commitizen = ">=4.8.4, <5"
+
+[tool.pixi.feature.dev.tasks]
+isort = "isort"
+black = "black"
+build = "python -m build --outdir dist/"
+
+[tool.pixi.feature.py311.dependencies]
+python = "3.11.*"
+
+[tool.pixi.feature.py312.dependencies]
+python = "3.12.*"
+
+[tool.pixi.feature.py313.dependencies]
+python = "3.13.*"
+
+[tool.pixi.environments]
+default = { solve-group = "default" }
+dev = {features = ["dev"], solve-group = "default"}
+py311 = ["py311", "default"]
+py312 = ["py312", "default"]
+py313 = ["py313", "default"]
 
 [tool.black]
 line-length = 88
-target-version = ['py310']
+target-version = ['py313']
 exclude = '''
 (
   /(
