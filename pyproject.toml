@@ -1,6 +1,6 @@
 [project]
 name = "pylicup"
-version = "0.1.2"
+version = "0.2.0"
 description = "Python License Update (PyLicUp). Updates all the python headers of your project with the provided license text."
 authors = [{name = "Carles S. Soriano Perez", email="carles.sorianoperez@deltares.nl"}]
 license = "MIT"
@@ -81,7 +81,7 @@ line_length = 88
 
 [tool.commitizen]
 name = "cz_conventional_commits"
-version = "0.1.2"
+version = "0.2.0"
 tag_format = "v$major.$minor.$patch"
 changelog_file = "changelog.md"
 update_changelog_on_bump = true

@@ -1,3 +1,9 @@
+## v0.2.0 (2025-12-01)
+
+### Feat
+
+- Replaced poetry with pixi; Updated dependencies
+
 ## v0.1.2 (2023-03-29)
 
 ### Fix
