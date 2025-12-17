@@ -5,7 +5,7 @@ description = "Python License Update (PyLicUp). Updates all the python headers o
 authors = [{name = "Carles S. Soriano Perez", email="carles.sorianoperez@deltares.nl"}]
 license = "MIT"
 readme = "README.md"
-requires-python = ">=3.11,<3.14"
+requires-python = ">=3.11,<3.15"
 
 [project.urls]
 hoempage = "https://github.com/Carsopre/PythonLicenseUpdater"
@@ -24,7 +24,7 @@ pylicup = { path = ".", editable = true }
 build = "*"
 
 [tool.pixi.dependencies]
-python = ">=3.11,<3.14"
+python = ">=3.11,<3.15"
 
 [tool.pixi.feature.dev.dependencies]
 black = ">=25.1.0, <26"
@@ -46,12 +46,16 @@ python = "3.12.*"
 [tool.pixi.feature.py313.dependencies]
 python = "3.13.*"
 
+[tool.pixi.feature.py314.dependencies]
+python = "3.14.*"
+
 [tool.pixi.environments]
 default = { solve-group = "default" }
 dev = {features = ["dev"], solve-group = "default"}
 py311 = ["py311", "default"]
 py312 = ["py312", "default"]
 py313 = ["py313", "default"]
+py314 = ["py314", "default"]
 
 [tool.black]
 line-length = 88
