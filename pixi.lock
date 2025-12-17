@@ -2446,8 +2446,8 @@ packages:
   timestamp: 1750615908735
 - pypi: ./
   name: pylicup
-  version: 0.2.0
-  sha256: cb9e5ed52c69516f8a4aae165593fc635b2ee781b50074ae01c24f93cdd753e3
+  version: 0.3.0
+  sha256: 757c7522acf86fb5a7e1eca08e78cbabddedbeed365219714ad0ef88ed6112e4
   requires_python: '>=3.11,<3.15'
   editable: true
 - pypi: https://files.pythonhosted.org/packages/bd/24/12818598c362d7f300f18e74db45963dbcb85150324092410c8b49405e42/pyproject_hooks-1.2.0-py3-none-any.whl
